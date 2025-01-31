@@ -10,7 +10,7 @@ const generateLocalizableContent = (languages: string[]) => `{
     "react-native-localization-settings" : {
       "extractionState" : "manual",
       "localizations" : {
-        "base" : {"stringUnit" : {"state" : "translated","value" : ""}},
+        "Base" : {"stringUnit" : {"state" : "translated","value" : ""}},
         ${languages
           .map(
             (lang) =>
