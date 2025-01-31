@@ -10,7 +10,6 @@ const generateLocalizableContent = (languages: string[]) => `{
     "react-native-localization-settings" : {
       "extractionState" : "manual",
       "localizations" : {
-        "Base" : {"stringUnit" : {"state" : "translated","value" : ""}},
         ${languages
           .map(
             (lang) =>
@@ -32,7 +31,7 @@ export const withIosLanguages: ConfigPlugin<{
       project.pbxProjectSection()[project.getFirstProject().uuid];
     if (projectObject) {
       // Add known regions to the project
-      projectObject.knownRegions = ['Base', ...languages];
+      projectObject.knownRegions = [...languages];
 
       // Write the Localizable.xcstrings file
       IOSConfig.XcodeProjectFile.createBuildSourceFile({
